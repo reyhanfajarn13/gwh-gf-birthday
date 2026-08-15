@@ -111,8 +111,8 @@ export function StopCard({
               </span>
             </div>
 
-            <div className="p-5">
-              <h2 className="font-display text-3xl leading-snug text-primary">{stop.question}</h2>
+            <div className="p-4 sm:p-5">
+              <h2 className="font-display text-2xl leading-snug text-primary sm:text-3xl">{stop.question}</h2>
               <p className="mt-1 text-xs text-muted-foreground">
                 Keep guessing until you find the right one — then the memory appears.
               </p>
@@ -148,7 +148,7 @@ export function StopCard({
               {note && (
                 <p
                   key={wrong.length}
-                  className="animate-pop-in mt-4 rounded-2xl border border-blush/60 bg-blush/20 px-4 py-3 text-center font-display text-2xl text-primary"
+                  className="animate-pop-in mt-4 rounded-2xl border border-blush/60 bg-blush/20 px-4 py-3 text-center font-display text-xl text-primary sm:text-2xl"
                   aria-live="polite"
                 >
                   {note}
@@ -192,8 +192,8 @@ export function StopCard({
             </span>
 
             {/* bottom: memory text + continue button */}
-            <div className="absolute bottom-0 left-0 right-0 p-5">
-              <p className="font-display text-2xl text-white drop-shadow">
+            <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5">
+              <p className="font-display text-xl text-white drop-shadow sm:text-2xl">
                 {wrong.length === 0 ? "Exactly right! 💜" : "There it is! You remembered 💜"}
               </p>
               <p className="mt-1 text-sm leading-relaxed text-white/85 drop-shadow">
@@ -202,7 +202,7 @@ export function StopCard({
               <button
                 type="button"
                 onClick={onNext}
-                className="mt-4 flex w-full items-center justify-center gap-2 rounded-full bg-white/20 px-6 py-4 font-display text-2xl text-white backdrop-blur-sm transition-transform hover:bg-white/30 active:scale-95"
+                className="mt-3 flex w-full items-center justify-center gap-2 rounded-full bg-white/20 px-6 py-3 font-display text-xl text-white backdrop-blur-sm transition-transform hover:bg-white/30 active:scale-95 sm:mt-4 sm:py-4 sm:text-2xl"
               >
                 <Heart className="h-5 w-5" />
                 {isLast ? "Finish the Journey" : "Continue"}

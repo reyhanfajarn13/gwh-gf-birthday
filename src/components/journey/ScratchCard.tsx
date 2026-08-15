@@ -9,10 +9,12 @@ export function ScratchCard({
   voucher,
   opened,
   onOpen,
+  horizontal = false,
 }: {
   voucher: Voucher;
   opened: boolean;
   onOpen: () => void;
+  horizontal?: boolean;
 }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -88,14 +90,27 @@ export function ScratchCard({
     <div
       ref={wrapRef}
       className={cn(
-        "relative h-52 select-none overflow-hidden rounded-3xl border border-gold/50 bg-card shadow-glow",
+        "relative select-none overflow-hidden rounded-3xl border border-gold/50 bg-card shadow-glow",
+        !horizontal && "h-52",
+        horizontal && "h-full w-full",
         revealed && "animate-pop-in",
       )}
     >
-      <div className="flex h-full flex-col items-center justify-center gap-1 px-4 text-center">
-        <span className="text-3xl">{voucher.emoji}</span>
-        <p className="font-display text-2xl leading-tight text-primary">{voucher.title}</p>
-        <p className="text-[11px] leading-snug text-muted-foreground">{voucher.description}</p>
+      <div
+        className={cn(
+          "flex h-full items-center",
+          horizontal
+            ? "flex-row gap-5 px-6 text-left"
+            : "flex-col justify-center gap-1 px-4 text-center",
+        )}
+      >
+        <span className={cn("leading-none", horizontal ? "shrink-0 text-5xl" : "text-3xl")}>
+          {voucher.emoji}
+        </span>
+        <div className={horizontal ? undefined : "flex flex-col gap-1"}>
+          <p className="font-display text-2xl leading-tight text-primary">{voucher.title}</p>
+          <p className="text-[11px] leading-snug text-muted-foreground">{voucher.description}</p>
+        </div>
       </div>
 
       {!revealed && (

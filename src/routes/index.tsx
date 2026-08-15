@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useCallback, useEffect, useState } from "react";
+import { CharacterSelect } from "@/components/journey/CharacterSelect";
 import { FinalMessage } from "@/components/journey/FinalMessage";
 import { JourneyBoard } from "@/components/journey/JourneyBoard";
 import { MusicPlayer } from "@/components/journey/MusicPlayer";
@@ -33,14 +34,16 @@ const STORAGE_KEY = "journey-ultah-v2";
 type SaveState = {
   answers: (number | null)[];
   vouchers: boolean[];
+  character: string;
 };
 
 const emptyState = (): SaveState => ({
   answers: STOPS.map(() => null),
   vouchers: VOUCHERS.map(() => false),
+  character: "🧚",
 });
 
-type Screen = "welcome" | "board" | "finish" | "rewards" | "final";
+type Screen = "welcome" | "character" | "board" | "finish" | "rewards" | "final";
 
 function Index() {
   const [state, setState] = useState<SaveState>(emptyState);
@@ -58,6 +61,7 @@ function Index() {
           setState({
             answers: base.answers.map((_, i) => parsed.answers[i] ?? null),
             vouchers: base.vouchers.map((_, i) => !!parsed.vouchers[i]),
+            character: parsed.character ?? "🧚",
           });
         }
       }
@@ -111,13 +115,23 @@ function Index() {
       <MusicPlayer />
 
       {screen === "welcome" && (
-        <WelcomeScreen onStart={() => setScreen("board")} hasProgress={answeredCount > 0} />
+        <WelcomeScreen onStart={() => setScreen("character")} hasProgress={answeredCount > 0} />
+      )}
+
+      {screen === "character" && (
+        <CharacterSelect
+          onSelect={(emoji) => {
+            setState((s) => ({ ...s, character: emoji }));
+            setScreen("board");
+          }}
+        />
       )}
 
       {screen === "board" && (
         <JourneyBoard
           current={current}
           answered={answered}
+          character={state.character}
           onOpen={(i) => setOpenStop(i)}
           center={
             <>
@@ -148,15 +162,15 @@ function Index() {
       )}
 
       {screen === "finish" && (
-        <div className="relative z-10 mx-auto flex min-h-[100dvh] max-w-lg flex-col items-center justify-center px-6 text-center">
-          <div className="animate-pop-in rounded-[2rem] border border-gold/40 bg-card/85 p-8 shadow-card backdrop-blur">
+        <div className="relative z-10 mx-auto flex min-h-[100dvh] max-w-lg flex-col items-center justify-center px-4 text-center sm:px-6">
+          <div className="animate-pop-in w-full rounded-[2rem] border border-gold/40 bg-card/85 p-5 shadow-card backdrop-blur sm:p-8">
             <span className="text-5xl">🎉</span>
-            <h2 className="mt-3 font-display text-4xl text-gradient">Journey complete!</h2>
+            <h2 className="mt-3 font-display text-3xl text-gradient sm:text-4xl">Journey complete!</h2>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{FINISH_MESSAGE}</p>
             <button
               type="button"
               onClick={() => setScreen("rewards")}
-              className="mt-6 w-full rounded-full bg-primary px-6 py-4 font-display text-2xl text-primary-foreground shadow-glow transition-transform hover:scale-[1.02] active:scale-95"
+              className="mt-5 w-full rounded-full bg-primary px-6 py-3 font-display text-xl text-primary-foreground shadow-glow transition-transform hover:scale-[1.02] active:scale-95 sm:mt-6 sm:py-4 sm:text-2xl"
             >
               Open the Gifts 🎁
             </button>

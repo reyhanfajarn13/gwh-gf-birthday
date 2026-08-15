@@ -42,11 +42,13 @@ const FIRST_OF_GROUP = STOPS.map((_, i) => i === 0 || GROUPS[i] !== GROUPS[i - 1
 export function JourneyBoard({
   current,
   answered,
+  character,
   onOpen,
   center,
 }: {
   current: number;
   answered: boolean[];
+  character: string;
   onOpen: (index: number) => void;
   center?: ReactNode;
 }) {
@@ -135,7 +137,7 @@ export function JourneyBoard({
 
               {isCurrent && (
                 <span className="pointer-events-none absolute -top-5 -right-1 z-10 animate-float-soft text-4xl">
-                  🧚
+                  {character}
                 </span>
               )}
             </div>
