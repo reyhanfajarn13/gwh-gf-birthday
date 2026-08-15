@@ -50,7 +50,7 @@ export const RECIPIENT_NAME = "Aya";
 
 /** Message on the welcome screen */
 export const WELCOME_MESSAGE =
-  "Happy birthday, my love. I built you a little Monopoly board of 28 places we have been to together. Answer each memory, and at the end of the road eight gifts are waiting for you.";
+  "Happy birthday, Aya! I have built you a mini-Monopoly board of 28 memory that we have been through together. Answer each memory, and at the end of the road, eight gifts are waiting for you.";
 
 /** Message after the last stop is completed */
 export const FINISH_MESSAGE =
@@ -65,7 +65,7 @@ export const VOUCHER_VALIDITY = "Valid until 15 August 2027";
 
 /** Long closing letter shown after all vouchers are opened */
 export const FINAL_MESSAGE =
-  "My love,\n\nAfter every city we have crossed and every gift you have opened, there is one more thing I want to say: thank you for being in my life. Every journey with you is the most beautiful gift, one I could never buy anywhere.\n\nI love you, not only for who you are today, but for every version of you we have travelled through together. May this year bring more laughter, more adventures, and more moments that belong only to the two of us.\n\nHappy birthday, my dearest.\n\nWith all my heart,\nMe";
+  "Hi Aya,\n\nI know how much you love birthdays, and today of all days, it doesn't feel right that we're 11,700+ km apart.\n\nBut somewhere between every memory you've unlocked in this little game, and every voucher and gift waiting for you in Indonesia, there's one more thing I want to say. Something much simpler than all of that.\n\nThank you for being in my life.\n\nEvery journey with you has been the most beautiful gift I've ever received, and the strange thing is, it's not something I could ever buy, anywhere, for anyone.\n\nI love you. Not just the version of you sitting there reading this today, but every version of you I've had the privilege of falling in love with along the way. Here's to a year with more laughter, more adventures, and more moments that are simply, quietly ours.\n\nn.b.: You might notice the song playing in the background of this app. It's \"Fairy Tale\" by Michael Wong, one of the most loved Chinese ballads out there. The chorus is basically him promising to become the person's guardian angel from the fairy tales, wrapping his arms around her like wings, protecting her, and asking her to believe that their own happily-ever-after is real.\n\nHappy 18 (plus 10) birthday, Aya.\n\nWith all my heart, from across continents,\n\nGalih";
 
 /** Background music file — put your file in the public folder with this name */
 export const MUSIC_SRC = "/musik-latar.mp3";
@@ -126,7 +126,7 @@ export const STOPS: Stop[] = [
     icon: "⚽",
     photo: photo04,
     question: "… and who was the scorer on the day we watched United back in December?",
-    options: ["Bruno Fernandes", "Rasmus Højlund", "Patrick Dorgu", "Amad Diallo"],
+    options: ["Bruno Fernandes", "Matheus Cunha", "Patrick Dorgu", "Joshua Zirkzee"],
     correctIndex: 2,
     memory: "The whole stand erupted, and you jumped higher than anyone.",
   },
@@ -149,7 +149,7 @@ export const STOPS: Stop[] = [
       "Snowfall! What is the name of the restaurant across the street where we experienced our first snowfall together?",
     options: ["Dishoom", "Landy's", "The Piper", "Howies"],
     correctIndex: 1,
-    memory: "Our very first snow together — you could not stop smiling.",
+    memory: "Our very first snow together — We were freezing, but happy.",
   },
   {
     city: "Lake",
@@ -187,7 +187,7 @@ export const STOPS: Stop[] = [
       "\"Better Man\" mashed up with \"Happiness\"",
     ],
     correctIndex: 1,
-    memory: "The piano set — you held my hand the entire time.",
+    memory: "The piano set – yet you are still standing all the time.",
   },
   {
     city: "Singapore",
@@ -206,7 +206,7 @@ export const STOPS: Stop[] = [
     question: "Your favourite pillow doll?",
     options: ["Stitch", "Totoro", "Toothless", "Pusheen"],
     correctIndex: 2,
-    memory: "He has been guarding your bed ever since.",
+    memory: "He has been guarding you when you fell asleep in the car ever since.",
   },
   {
     city: "Singapore",
@@ -226,7 +226,7 @@ export const STOPS: Stop[] = [
     question: "You love the photo that he took so much. Do you remember his name?",
     options: ["John", "James", "Jack", "Josh"],
     correctIndex: 0,
-    memory: "One stranger, one photo, and a memory we kept forever.",
+    memory: "One stranger, One Photo albums, and memories that we kept forever.",
   },
   {
     city: "Australia",
@@ -236,7 +236,7 @@ export const STOPS: Stop[] = [
       "This is the first coffee that you liked. Yes, it was a Flat White, and you loved the cannelé as well, in the city you admire so much.",
     options: ["Patricia", "Market Lane", "Proud Mary", "Seven Seeds"],
     correctIndex: 0,
-    memory: "The tiny standing-room coffee bar that made you a coffee person.",
+    memory: "The tiny standing-room coffee bar that made you choice coffee over matcha.",
   },
   {
     city: "Australia",
@@ -245,7 +245,7 @@ export const STOPS: Stop[] = [
     question: "We were there. One of your dreams. But it became the one that got away. What is it?",
     options: ["Whale watching", "Aurora", "Skydiving", "Hot air balloon"],
     correctIndex: 1,
-    memory: "The sky did not show up that night — so we will chase it again.",
+    memory: "One night after we went there, the aurora australis show up. So, let’s chase it again next time!",
   },
   {
     city: "Australia",
@@ -254,7 +254,7 @@ export const STOPS: Stop[] = [
     question: "The place that is full of grapes!",
     options: ["Barossa Valley", "Hunter Valley", "Yarra Valley", "Margaret River"],
     correctIndex: 2,
-    memory: "Wine, cheese, and a very slow, very perfect afternoon.",
+    memory: "Crème de la crème red and white wine, with a very slow, perfect afternoon.",
   },
   {
     city: "Japan",
@@ -312,7 +312,7 @@ export const STOPS: Stop[] = [
     question: "We were stuck at midnight waiting for the airplane. Which airline were we waiting for?",
     options: ["AirAsia", "Malaysia Airlines", "Batik Air", "Scoot"],
     correctIndex: 2,
-    memory: "A very long night at the gate, and you fell asleep on my shoulder.",
+    memory: "Successfully made us trauma of transit in KL.",
   },
   {
     city: "Thailand",
@@ -342,7 +342,7 @@ export const STOPS: Stop[] = [
     question: "What characters did we meet back in our time in Bromo?",
     options: ["Minions", "Teletubbies", "Doraemon", "Upin & Ipin"],
     correctIndex: 1,
-    memory: "The green hills — and you named them before I could.",
+    memory: "Freezing in the morning + extremely hot in the afternoon.",
   },
   {
     city: "Indonesia",
@@ -369,7 +369,7 @@ export const STOPS: Stop[] = [
     photo: photo28,
     question:
       "Today, you are turning to the new chapter of your life. May you live your life to the fullest. What is your current age?",
-    options: ["18 (plus 8)", "18 (plus 9)", "18 (plus 10)", "18 (plus 11)"],
+    options: ["18", "21", "18 (plus 10)", "almost 30"],
     correctIndex: 2,
     memory: "A brand new chapter — and I get to read it with you.",
   },
@@ -414,7 +414,7 @@ export const VOUCHERS: Voucher[] = [
   {
     emoji: "✈️",
     title: "Trip!",
-    description: "A free trip to the place of your choice.",
+    description: "\nGet free trip to your selected place!\n\nNotes: I’ve bought Trader’s Joe tote bag for you so we can bring a lot of stuff in one bag when we are strolling down the city street.",
   },
   {
     emoji: "🌱",

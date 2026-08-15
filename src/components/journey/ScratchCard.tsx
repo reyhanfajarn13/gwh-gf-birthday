@@ -109,7 +109,7 @@ export function ScratchCard({
         </span>
         <div className={horizontal ? undefined : "flex flex-col gap-1"}>
           <p className="font-display text-2xl leading-tight text-primary">{voucher.title}</p>
-          <p className="text-[11px] leading-snug text-muted-foreground">{voucher.description}</p>
+          <p className="whitespace-pre-line text-[11px] leading-snug text-muted-foreground">{voucher.description}</p>
         </div>
       </div>
 
